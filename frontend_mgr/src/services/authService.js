@@ -2,7 +2,7 @@
 
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/auth/internal"; // Update with your backend auth API
+const API_URL = "https://slt-workbench-backend.up.railway.app/api/auth/internal"; // Update with your backend auth API
 
 // Get token from local storage
 export const getToken = () => {

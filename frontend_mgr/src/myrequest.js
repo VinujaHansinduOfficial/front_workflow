@@ -36,7 +36,7 @@ export default function RequestHistory() {
     if (!username || userLoading) return; // Wait for username to load
 
     // console.log("Fetching data for user:", username);
-    fetch(`http://localhost:8080/api/attachments/${username}`)
+    fetch(`https://slt-workbench-backend.up.railway.app/api/attachments/${username}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch data");
@@ -62,14 +62,14 @@ export default function RequestHistory() {
 
   // Open the main PDF dialog
   const handleDialogOpen = (attachmentId) => {
-    const pdfUrl = `http://localhost:8080/api/attachments/file/${attachmentId}`;
+    const pdfUrl = `https://slt-workbench-backend.up.railway.app/api/attachments/file/${attachmentId}`;
     setSelectedPdf(pdfUrl);
     setOpen(true);
   };
 
   // Open annexures in new tab
   const handleOpenAnnexure = (attachmentId, index) => {
-    const annexureUrl = `http://localhost:8080/api/attachments/${attachmentId}/annexure/${index}`;
+    const annexureUrl = `https://slt-workbench-backend.up.railway.app/api/attachments/${attachmentId}/annexure/${index}`;
     window.open(annexureUrl, "_blank");
   };
 
