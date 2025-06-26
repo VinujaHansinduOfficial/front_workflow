@@ -37,7 +37,7 @@ export default function WorkflowTemplate() {
 
     // Fetch all employees
     axios
-      .get("http://localhost:8080/api/employee") // Update this URL as needed
+      .get("https://slt-workbench-backend.up.railway.app/api/employee") // Update this URL as needed
       .then((res) => {
         setEmployees(res.data); // Store the list of employees
       })
@@ -161,7 +161,7 @@ export default function WorkflowTemplate() {
 
     try {
       const templateResponse = await axios.post(
-        "http://localhost:8080/api/template",
+        "https://slt-workbench-backend.up.railway.app/api/template",
         newTemplate,
         {
           headers: {
@@ -178,7 +178,7 @@ export default function WorkflowTemplate() {
       formData.append("templateId", templateId);
 
       const fileResponse = await axios.post(
-        `http://localhost:8080/api/templatefile/upload`,
+        `https://slt-workbench-backend.up.railway.app/api/templatefile/upload`,
         formData,
         {
           headers: {
@@ -235,7 +235,7 @@ export default function WorkflowTemplate() {
       }
 
       const workflowResponse = await axios.post(
-        "http://localhost:8080/api/workflows",
+        "https://slt-workbench-backend.up.railway.app/api/workflows",
         workflowData,
         {
           headers: {
