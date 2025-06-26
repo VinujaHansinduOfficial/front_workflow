@@ -19,7 +19,7 @@ export default function WorkflowTemplate() {
     };
 
     try {
-      const response = await axios.post('https://slt-workbench-backend.up.railway.app/api/template', newTemplate);
+      const response = await axios.post('https://sltworkbenchbackend-production.up.railway.app/api/template', newTemplate);
       console.log('Template created successfully', response.data);
       // Reset form after successful submission
       setFormName('');

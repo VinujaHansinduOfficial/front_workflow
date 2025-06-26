@@ -29,7 +29,7 @@ const MyApprovals = () => {
   useEffect(() => {
     if (username) {
       axios
-        .get(`https://slt-workbench-backend.up.railway.app/api/workprogress/assignee/${username}`)
+        .get(`https://sltworkbenchbackend-production.up.railway.app/api/workprogress/assignee/${username}`)
         .then((response) => {
           const pendingApprovals = response.data.filter(
             (item) => item.status.toLowerCase() === "in progress"
@@ -78,7 +78,7 @@ const MyApprovals = () => {
     };
 
     try {
-      await axios.put(`https://slt-workbench-backend.up.railway.app/api/workprogress/${id}`, payload);
+      await axios.put(`https://sltworkbenchbackend-production.up.railway.app/api/workprogress/${id}`, payload);
       setPending((prev) =>
         prev.map((item) =>
           item.id === id
@@ -127,7 +127,7 @@ const MyApprovals = () => {
     setWorkflowPopup({ open: true, loading: true, error: null, data: [] });
     try {
       const res = await axios.get(
-        `https://slt-workbench-backend.up.railway.app/api/workprogress/workflow/${workflowId}`
+        `https://sltworkbenchbackend-production.up.railway.app/api/workprogress/workflow/${workflowId}`
       );
       setWorkflowPopup({
         open: true,

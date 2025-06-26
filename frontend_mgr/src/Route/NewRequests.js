@@ -28,7 +28,7 @@ const NewRequests = () => {
     const fetchTemplates = async () => {
       try {
         const response = await fetch(
-          "https://slt-workbench-backend.up.railway.app/api/template/getall"
+          "https://sltworkbenchbackend-production.up.railway.app/api/template/getall"
         );
         if (!response.ok) throw new Error("Failed to fetch templates");
         const data = await response.json();
@@ -59,7 +59,7 @@ const NewRequests = () => {
 
   const fetchWorkflowDetails = async (formId) => {
     try {
-      const response = await fetch(`https://slt-workbench-backend.up.railway.app/api/workflows/${formId}`);
+      const response = await fetch(`https://sltworkbenchbackend-production.up.railway.app/api/workflows/${formId}`);
       if (!response.ok) throw new Error("Failed to fetch workflow details");
       const data = await response.json();
       setWorkflowDetails(data);
@@ -87,7 +87,7 @@ const NewRequests = () => {
     let supervisors = [];
     try {
       const response = await fetch(
-        `https://slt-workbench-backend.up.railway.app/api/employee/workflow/${createdBy}`
+        `https://sltworkbenchbackend-production.up.railway.app/api/employee/workflow/${createdBy}`
       );
       if (!response.ok) throw new Error("Failed to fetch supervisor data");
       supervisors = await response.json();
@@ -166,7 +166,7 @@ const NewRequests = () => {
           attachmentId,
         };
 
-        const response = await fetch("https://slt-workbench-backend.up.railway.app/api/workprogress", {
+        const response = await fetch("https://sltworkbenchbackend-production.up.railway.app/api/workprogress", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -234,7 +234,7 @@ const NewRequests = () => {
 
     try {
       const response = await fetch(
-        "https://slt-workbench-backend.up.railway.app/api/attachments/upload",
+        "https://sltworkbenchbackend-production.up.railway.app/api/attachments/upload",
         {
           method: "POST",
           body: formData,
