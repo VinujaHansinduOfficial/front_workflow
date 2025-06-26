@@ -20,7 +20,7 @@ const SignIn = () => {
 
         axios
           .post(
-            "https://slt-workbench-backend.up.railway.app/api/auth/internal",
+            "http://localhost:8080/api/auth/internal",
             { email },
             { withCredentials: true }
           )
